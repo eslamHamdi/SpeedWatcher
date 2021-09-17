@@ -30,9 +30,10 @@ class MainActivity : AppCompatActivity(),EasyPermissions.PermissionCallbacks {
         super.onCreate(savedInstanceState)
         //setContentView()
 
-        speedService = SpeedService()
         val binding:ActivityMainBinding = DataBindingUtil.setContentView(
             this, R.layout.activity_main)
+        speedService = SpeedService()
+        requestPermissions(this)
 
 
         lifecycleScope.launch {
